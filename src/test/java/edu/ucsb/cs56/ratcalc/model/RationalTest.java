@@ -274,6 +274,66 @@ public class RationalTest {
     Rational r = Rational.difference(r_3_4,r_1_2);
     assertEquals("1/4", r.toString());
   }
+
+  @Test
+  public void test_reciprocal_of_r_5_15(){
+    Rational r = r_5_15.reciprocalOf();
+    assertEquals("3", r.toString());
+  }
+
+  @Test(expected = ArithmeticException.class)
+  public void test_reciprocal_of_r_0_1(){
+    Rational r = r_0_1.reciprocalOf();
+  }
+
+  @Test
+  public void test_reciprocal_of_r_13_4(){
+    Rational r = r_13_4.reciprocalOf();
+    assertEquals("4/13", r.toString());
+  }
+
+  @Test
+  public void test_dividedBy_r_0_1_and_r_1_3() {
+    Rational r_1_3 = new Rational(1, 3);
+    Rational r = r_0_1.dividedBy(r_1_3);
+    assertEquals("0", r.toString());
+  }
+
+  @Test
+  public void test_dividedBy_m5_6_and_r_1_2() {
+    Rational r_5_m6 = new Rational(5,-6);
+    Rational r_1_2 = new Rational(1, 2);
+    Rational r = r_5_m6.dividedBy(r_1_2);
+    assertEquals("-5/3", r.toString());
+  }
+
+  @Test
+  public void test_dividedBy_r_1_2_and_r_1_3() {
+    Rational r_1_2 = new Rational(1, 2);
+    Rational r_1_3 = new Rational(1, 3);
+    Rational r = r_1_2.dividedBy(r_1_3);
+    assertEquals("3/2", r.toString());
+  }
+
+  @Test
+  public void test_quotient_of_r_0_1_and_r_1_3() {
+    Rational r_1_3 = new Rational(1, 3);
+    assertEquals("0", Rational.quotient(r_0_1, r_1_3).toString());
+  }
+
+  @Test
+  public void test_quotient_of_m5_6_and_r_1_2() {
+    Rational r_5_m6 = new Rational(5,-6);
+    Rational r_1_2 = new Rational(1, 2);
+    assertEquals("-5/3", Rational.quotient(r_5_m6, r_1_2).toString());
+  }
+
+  @Test
+  public void test_quotient_of_r_1_2_and_r_1_3() {
+    Rational r_1_2 = new Rational(1, 2);
+    Rational r_1_3 = new Rational(1, 3);
+    assertEquals("3/2", Rational.quotient(r_1_2, r_1_3).toString());
+  }
 }
 
 
