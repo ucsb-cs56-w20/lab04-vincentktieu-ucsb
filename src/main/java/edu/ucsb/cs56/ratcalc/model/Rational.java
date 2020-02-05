@@ -68,11 +68,6 @@ public class Rational {
     }
 
 
-    /**
-	For testing getters.
-	@param args unused
-     */
-
     public static int lcm(int a, int b) {
       if (a == 0 && b == 0) {
         return 0;
@@ -131,6 +126,11 @@ public class Rational {
     public static Rational quotient (Rational a, Rational b) {
       return a.dividedBy(b);
     }
+
+    /**
+	For testing getters.
+	@param args unused
+     */
 
     public static void main (String [] args) {
 	Rational r = new Rational(5,7);
